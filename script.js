@@ -15,25 +15,25 @@ var defaultRecipes = [
     {
         id: 3,
         name: '바나나 브레드',
-        image: 'https://via.placeholder.com/300x200/ffc107/ffffff?text=바나나+브레드',
+        image: 'images/바나나 브레드.png',
         recipe: '익은 바나나 2개, 밀가루 200g, 설탕 100g, 계란 1개, 버터 50g을 섞어 180도에서 40분간 구워주세요.'
     },
     {
         id: 4,
         name: '블루베리 머핀',
-        image: 'https://via.placeholder.com/300x200/9c27b0/ffffff?text=블루베리+머핀',
+        image: 'images/blueberry_muffin.png',
         recipe: '밀가루 200g, 설탕 80g, 계란 1개, 우유 100ml, 블루베리 100g을 넣고 180도에서 20분간 구워주세요.'
     },
     {
         id: 5,
         name: '애플파이',
-        image: 'https://via.placeholder.com/300x200/4caf50/ffffff?text=애플파이',
+        image: 'images/애플파이.png',
         recipe: '사과 3개, 설탕 80g, 시나몬 1tsp, 파이 도우를 준비해 190도에서 30분간 구워주세요.'
     },
     {
         id: 6,
         name: '레드벨벳 케이크',
-        image: 'https://via.placeholder.com/300x200/e91e63/ffffff?text=레드벨벳+케이크',
+        image: 'images/red_velvet_cake.jpg',
         recipe: '밀가루 250g, 설탕 200g, 코코아파우더 1tsp, 식용색소 1tsp, 계란 2개를 섞어 180도에서 25분간 구워주세요.'
     }
 ];
