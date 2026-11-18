@@ -33,8 +33,8 @@
                     <input type="text" id="recipeName" required>
                 </div>
                 <div class="form-group">
-                    <label for="recipeImage">사진 URL</label>
-                    <input type="url" id="recipeImage" placeholder="https://example.com/image.jpg">
+                    <label for="recipeImage">사진 파일</label>
+                    <input type="file" id="recipeImage" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label for="recipeText">레시피 내용</label>
@@ -45,23 +45,18 @@
         </div>
     </div>
 
-    <!-- 레시피 상세 보기 모달 -->
-    <div class="modal" id="detailModal">
-        <div class="modal-content detail-content">
-            <div class="modal-header">
-                <h2 id="detailTitle">레시피 상세</h2>
-                <button class="close-btn" id="closeDetailBtn">×</button>
-            </div>
-            <div class="detail-body">
-                <img id="detailImage" class="detail-image" src="" alt="">
-                <div class="detail-info">
-                    <h3 id="detailName"></h3>
-                    <p id="detailRecipe"></p>
-                </div>
-                <div class="detail-buttons">
-                    <button class="edit-btn" id="editRecipeBtn">수정하기</button>
-                    <button class="delete-btn" id="deleteRecipeBtn">삭제하기</button>
-                </div>
+    <!-- 레시피 상세 보기 화면 -->
+    <div class="detail-view" id="detailView" style="display: none;">
+        <div class="detail-header">
+            <button class="back-btn" id="backBtn">← 뒤로가기</button>
+            <h1 id="detailName"></h1>
+        </div>
+        <div class="detail-content">
+            <img id="detailImage" class="detail-image" src="" alt="">
+            <p id="detailRecipe"></p>
+            <div class="detail-buttons">
+                <button class="edit-btn" id="editRecipeBtn">수정하기</button>
+                <button class="delete-btn" id="deleteRecipeBtn">삭제하기</button>
             </div>
         </div>
     </div>
@@ -80,8 +75,8 @@
                     <input type="text" id="editRecipeName" required>
                 </div>
                 <div class="form-group">
-                    <label for="editRecipeImage">사진 URL</label>
-                    <input type="url" id="editRecipeImage" placeholder="https://example.com/image.jpg">
+                    <label for="editRecipeImage">사진 파일</label>
+                    <input type="file" id="editRecipeImage" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label for="editRecipeText">레시피 내용</label>

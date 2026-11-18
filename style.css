@@ -54,6 +54,18 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* 목록 화면 전환 애니메이션 */
+.recipe-list.slide-out {
+    opacity: 0;
+    transform: translateX(-18px);
+}
+
+.recipe-list.slide-in {
+    opacity: 0;
+    transform: translateX(-18px);
 }
 
 /* 레시피 카드 스타일 */
@@ -190,16 +202,71 @@ header h1 {
     background-color: #c2185b;
 }
 
-/* 상세 보기 모달 스타일 */
-.detail-content {
-    max-width: 600px;
+/* 상세 보기 화면 스타일 */
+.detail-view {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-.detail-body {
-    margin-top: 20px;
+/* 상세 보기 화면 전환 애니메이션 */
+.detail-view.slide-in {
+    opacity: 0;
+    transform: translateX(18px);
 }
 
-.detail-image {
+.detail-view.slide-out {
+    opacity: 0;
+    transform: translateX(18px);
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+    background-color: #666;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #555;
+}
+
+.detail-header h1 {
+    font-size: 24px;
+    color: #e91e63;
+}
+
+.detail-view .detail-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.detail-view .detail-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    white-space: pre-line;
+}
+
+.detail-view .detail-content .detail-image {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -207,17 +274,10 @@ header h1 {
     margin-bottom: 20px;
 }
 
-.detail-info h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.detail-info p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #666;
-    white-space: pre-wrap;
+.detail-view .detail-content hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
 }
 
 /* 상세 보기 버튼 스타일 */
@@ -257,4 +317,20 @@ header h1 {
 
 .delete-btn:hover {
     background-color: #d32f2f;
+}
+
+/* 동작 줄이기 설정일 때 애니메이션 비활성화 */
+@media (prefers-reduced-motion: reduce) {
+    .recipe-list,
+    .detail-view {
+        transition: none;
+    }
+
+    .recipe-list.slide-out,
+    .recipe-list.slide-in,
+    .detail-view.slide-in,
+    .detail-view.slide-out {
+        opacity: 1;
+        transform: none;
+    }
 }
